@@ -1,17 +1,17 @@
-import Button from "./ui/Button";
+import Button from "./Button";
 import Customer from "./customer/Customer";
 import { useState } from "react";
 
 export default function BackOffice() {
 
-  const [selectedOption, setSelectedOption] = useState("Customers")
+  const [selectedOption, setSelectedOption] = useState("customers")
   const renderComponent = () => {
     switch (selectedOption) {
-      case "Customers":
+      case "customers":
         return <Customer />;
-      case "Cars":
+      case "cars":
         return <Customer />;
-      case "Rents":
+      case "cents":
         return <Customer />;
       default:
         return <Customer/>;
@@ -19,7 +19,7 @@ export default function BackOffice() {
   }
     const onClick = (event: React.MouseEvent<HTMLButtonElement>) => {
       const name = event.currentTarget.name;
-      setSelectedOption(name);
+      setSelectedOption(name.toLocaleLowerCase());
     };
 	return (
 		<>
