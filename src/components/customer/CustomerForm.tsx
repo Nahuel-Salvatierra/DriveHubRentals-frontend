@@ -1,8 +1,8 @@
 import toast from "react-hot-toast";
 import useCustomer from "../../hooks/useCustomer";
 import { INPUTS_CUSTOMER } from "../../utils/inputs.customer";
-import Button from "../ui/Button";
-import Input from "../ui/Input";
+import Button from "../Button";
+import Input from "../Input";
 
 export default function CustomerForm() {
   
@@ -13,7 +13,8 @@ export default function CustomerForm() {
     const form = new FormData(event.currentTarget);
     try {
           await createCustomer(form);
-    } catch (error) {
+          toast.success("Customer created");
+        } catch (error) {
       toast.error(`${error}`);
     }
   }
