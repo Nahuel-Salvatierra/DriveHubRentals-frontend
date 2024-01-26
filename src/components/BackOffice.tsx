@@ -1,32 +1,33 @@
 import Button from "./Button";
+import Car from "./car/Car";
 import Customer from "./customer/Customer";
 import { useState } from "react";
+import Rent from "./rent/Rent";
 
 export default function BackOffice() {
-
-  const [selectedOption, setSelectedOption] = useState("customers")
-  const renderComponent = () => {
-    switch (selectedOption) {
-      case "customers":
-        return <Customer />;
-      case "cars":
-        return <Customer />;
-      case "cents":
-        return <Customer />;
-      default:
-        return <Customer/>;
-    }
-  }
-    const onClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-      const name = event.currentTarget.name;
-      setSelectedOption(name.toLocaleLowerCase());
-    };
+	const [selectedOption, setSelectedOption] = useState("customer");
+	const renderComponent = () => {
+		switch (selectedOption) {
+			case "customer":
+				return <Customer />;
+			case "car":
+				return <Car />;
+			case "rent":
+				return <Rent />;
+			default:
+				return <Customer />;
+		}
+	};
+	const onClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+		const name = event.currentTarget.name;
+		setSelectedOption(name);
+	};
 	return (
 		<>
 			<div className="container flex px-20 pt-10 justify-center">
-				<Button type="button" name="Customers" onClick={onClick} />
-				<Button type="button" name="Cars" onClick={onClick} />
-				<Button type="button" name="Rents" onClick={onClick} />
+				<Button type="button" name="customer" onClick={onClick} />
+				<Button type="button" name="car" onClick={onClick} />
+				<Button type="button" name="rent" onClick={onClick} />
 			</div>
 			<div id="back-office">{renderComponent()}</div>
 		</>
