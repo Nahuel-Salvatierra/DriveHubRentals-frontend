@@ -24,7 +24,7 @@ export default function BackOffice() {
 	};
 	return (
 		<>
-			<div className="container flex px-20 pt-10 justify-center">
+			<div className="sm:flex px-20  pt-10 justify-center gap-2 ">
 				<Button type="button" name="customer" onClick={onClick} />
 				<Button type="button" name="car" onClick={onClick} />
 				<Button type="button" name="rent" onClick={onClick} />

@@ -1,10 +1,10 @@
-import { useFetchOnChange } from "../../hooks/useFetchOnChange";
+import { useFetch } from "../../hooks/useFetch";
 import { getResources } from "../../services/api.service";
 import Table from "../Table";
 import Th from "../Th";
 
 export default function CarTable() {
-	const { fetchedData } = useFetchOnChange(getResources, "car");
+	const { fetchedData } = useFetch(getResources, "car");
 
 	return (
 		<Table data={fetchedData}>

@@ -1,10 +1,10 @@
-import { useFetchOnChange } from "../../hooks/useFetchOnChange";
+import { useFetch } from "../../hooks/useFetch";
 import { getResources } from "../../services/api.service";
 import Table from "../Table";
 import Th from "../Th";
 
 export default function CustomerTable() {
-	const { fetchedData } = useFetchOnChange(getResources, "customer");
+	const { fetchedData } = useFetch(getResources, "customer");
 
 	return (
 		<Table data={fetchedData}>
@@ -16,7 +16,7 @@ export default function CustomerTable() {
 				<Th text="document number" />
 				<Th text="birth date" />
 				<Th text="address" />
-				<Th text="phone" />	
+				<Th text="phone" />
 				<Th text="email" />
 				<Th text="created at" />
 				<Th text="updated at" />
