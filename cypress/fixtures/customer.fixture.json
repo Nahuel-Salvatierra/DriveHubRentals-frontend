@@ -1,0 +1,41 @@
+[
+	{
+		"id": 1,
+		"name": "Juan",
+		"lastName": "Perez",
+		"documentType": "dni",
+		"documentNumber": 123456789,
+		"birthDate": "1990-05-15",
+		"address": "Calle 123",
+		"phone": 987654321,
+		"email": "juan.perez@example.com",
+		"createdAt": "2024-01-27T10:00:00Z",
+		"updatedAt": "2024-01-27T12:30:00Z"
+	},
+	{
+		"id": 2,
+		"name": "Maria",
+		"lastName": "Gomez",
+		"documentType": "passport",
+		"documentNumber": 987654321,
+		"birthDate": "1985-08-20",
+		"address": "Avenida 456",
+		"phone": 123456789,
+		"email": "maria.gomez@example.com",
+		"createdAt": "2024-01-27T09:30:00Z",
+		"updatedAt": "2024-01-27T14:45:00Z"
+	},
+	{
+		"id": 3,
+		"name": "Carlos",
+		"lastName": "Lopez",
+		"documentType": "dni",
+		"documentNumber": 555555555,
+		"birthDate": "1975-03-10",
+		"address": "Plaza 789",
+		"phone": 999888777,
+		"email": "carlos.lopez@example.com",
+		"createdAt": "2024-01-27T08:15:00Z",
+		"updatedAt": "2024-01-27T16:20:00Z"
+	}
+]
