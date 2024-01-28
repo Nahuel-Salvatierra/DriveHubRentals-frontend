@@ -1,0 +1,41 @@
+[
+	{
+		"id": 1,
+		"brand": "Toyota",
+		"model": "Corolla",
+		"year": 2022,
+		"kms": 15000,
+		"color": "Blue",
+		"AC": true,
+		"passengers": 5,
+		"transmission": "automatic",
+		"createdAt": "2024-01-27T00:00:00Z",
+		"updatedAt": "2024-01-27T12:30:00Z"
+	},
+	{
+		"id": 2,
+		"brand": "Honda",
+		"model": "Civic",
+		"year": 2020,
+		"kms": 20000,
+		"color": "Red",
+		"AC": true,
+		"passengers": 4,
+		"transmission": "manual",
+		"createdAt": "2024-01-27T08:00:00Z",
+		"updatedAt": "2024-01-27T14:45:00Z"
+	},
+	{
+		"id": 3,
+		"brand": "Ford",
+		"model": "Mustang",
+		"year": 2021,
+		"kms": 10000,
+		"color": "Black",
+		"AC": true,
+		"passengers": 2,
+		"transmission": "automatic",
+		"createdAt": "2024-01-27T04:15:00Z",
+		"updatedAt": "2024-01-27T16:20:00Z"
+	}
+]
