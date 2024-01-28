@@ -1,4 +1,4 @@
-import { DataType } from "../hooks/useFetchOnChange";
+import { DataType } from "../hooks/useFetch";
 import Td from "./Td";
 
 export default function TBody({ fetchedData }: DataType) {

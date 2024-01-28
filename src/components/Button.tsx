@@ -12,7 +12,7 @@ export default function Button({ type, name, onClick }: ButtonProps) {
 				name={name}
 				type={type}
 				onClick={onClick}
-				className="w-full h-12 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 hover:bg-lime-300"
+				className="w-full h-12 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-green-300 hover:bg-green-400"
 			>
 				{name}
 			</button>
