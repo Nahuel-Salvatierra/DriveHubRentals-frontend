@@ -1,40 +1,39 @@
 /// <reference types="cypress" />
-import { INPUTS_CUSTOMER } from "./../../src/utils/inputs.customer";
 
 describe("Customer", () => {
 	beforeEach(() => {
-		cy.intercept("GET", "/customer", { fixture: "customer.json" }).as(
-			"getCustomer"
-		);
-	});
-
-	it("Should form be visible and exist", () => {
 		cy.visit("/");
-		INPUTS_CUSTOMER.map((customer) => {
-			cy.get(`input[name=${customer.name}]`)
-				.should("be.visible")
-				.should("exist");
-		});
-
-		cy.get("[data-cy=Save]").should("be.visible").should("exist");
+		cy.intercept("GET", "/car", { fixture: "car.fixture.json" });
+		cy.intercept("GET", "/customer", { fixture: "customer.fixture.json" });
+		cy.intercept("GET", "/rent", { fixture: "rent.fixture.json" });
 	});
 
-	it("Should create a customer", () => {
+	it("Should exist form customer", () => {
+		cy.get("[data-cy=customer").click();
+		cy.get("[data-cy=name").should("exist");
+		cy.get("[data-cy=lastName").should("exist");
+		cy.get("[data-cy=phone").should("exist");
+		cy.get("[data-cy=address").should("exist");
+		cy.get("[data-cy=birthDate").should("exist");
+		cy.get("[data-cy=email").should("exist");
+		cy.get("[data-cy=documentType").should("exist");
+		cy.get("[data-cy=documentNumber").should("exist");
+	});
+
+	it("Should create customer", () => {
 		cy.intercept("POST", "/customer", {
 			statusCode: 201,
 		});
-		cy.visit("/");
-		INPUTS_CUSTOMER.map((customer) => {
-			if (customer.type === "number")
-				cy.get(`[data-cy=${customer.name}]`).type("12341235");
-			if (customer.type === "date")
-				cy.get(`[data-cy=${customer.name}]`).type("2022-01-01");
-			if (customer.type === "text")
-				cy.get(`[data-cy=${customer.name}]`).type(customer.name);
-			if (customer.type === "email")
-				cy.get(`[data-cy=${customer.name}]`).type("mail@gmail.com");
-		});
-		cy.get("[data-cy=Save]").click();
-		cy.contains('Customers loaded').should('be.visible');
+		cy.get("[data-cy=customer]").click();
+		cy.get("[data-cy=name]").type("John");
+		cy.get("[data-cy=lastName]").type("Doe");
+		cy.get("[data-cy=documentType]").select("Passport");
+		cy.get("[data-cy=documentNumber]").type("12345678");
+		cy.get("[data-cy=address]").type("123 Main St");
+		cy.get("[data-cy=email]").type("a@a.com");
+		cy.get("[data-cy=phone]").type("123456789");
+		cy.get("[data-cy=birthDate]").type("2000-01-01");
+		cy.get("[data-cy=button-submit]").click();
+		cy.contains("Customer created").should("exist")
 	});
 });
