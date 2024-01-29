@@ -7,7 +7,7 @@ function App(): React.JSX.Element {
 	useStartApp();
 	return (
 		<div className="bg-gray-100">
-			<BackOffice />
+				<BackOffice />
 			<Toaster data-cy="toaster" />
 		</div>
 	);

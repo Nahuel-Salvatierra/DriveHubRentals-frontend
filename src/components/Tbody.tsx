@@ -1,4 +1,5 @@
 import { DataType } from "../hooks/useFetch";
+import ButtonShowModal from "./ButtonShowModalEdit";
 import Td from "./Td";
 
 export default function TBody({ fetchedData }: DataType) {
@@ -14,9 +15,7 @@ export default function TBody({ fetchedData }: DataType) {
 							return <Td key={index} item={value} />;
 						})}
 						<td className="px-2 py-4">
-							<a
-								href="#"
-								className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+							<ButtonShowModal key={object.id} object={object}/>
 						</td>
 					</tr>
 				);

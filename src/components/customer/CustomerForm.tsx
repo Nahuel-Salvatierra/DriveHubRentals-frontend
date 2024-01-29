@@ -1,17 +1,22 @@
 import toast from "react-hot-toast";
-import useCustomer from "../../hooks/useCustomer";
 import Input from "../Input";
 import InputSelect from "../Select";
 import ButtonSubmit from "../ButtonSubmit";
+import useSendResources from "../../hooks/useSendResources";
+import { postResources } from "../../services/api.service";
+import { Customer } from "../../models/customer.model";
 
 export default function CustomerForm() {
-	const { createCustomer } = useCustomer();
-
+	const { sendResources } = useSendResources();
 	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 		const form = new FormData(event.currentTarget);
 		try {
-			await createCustomer(form);
+			await sendResources(
+				postResources,
+				"customer",
+				form as unknown as Customer
+			);
 			toast.success("Customer created");
 		} catch (error) {
 			toast.error(`${error}`);
@@ -109,7 +114,7 @@ export default function CustomerForm() {
 						/>
 					</div>
 				</div>
-				<ButtonSubmit/>
+				<ButtonSubmit />
 			</form>
 		</div>
 	);
