@@ -1,20 +1,19 @@
 import { DataType } from "../hooks/useFetch";
 import TBody from "./TBody";
 
-interface TableProps{
-  children: React.ReactNode
-  data: DataType["fetchedData"]
+interface TableProps {
+	children: React.ReactNode;
+	data: DataType["fetchedData"];
 }
-export default function Table({children , data}: TableProps) {
-  
-  return (
-    <div className="px-20  overflow-x-auto relative pt-10 sm:rounded-lg">
-    <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-      <thead className="text-xs text-gray-900 uppercase bg-gray-50">
-        {children}
-      </thead>
-      {data && <TBody fetchedData={data}/>}
-    </table>
-  </div>
-  )
+export default function Table({ children, data }: TableProps) {
+	return (
+		<div className="px-20  overflow-x-auto relative pt-10 sm:rounded-lg">
+			<table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+				<thead className="text-xs text-gray-900 uppercase bg-gray-50">
+					{children}
+				</thead>
+				{data && <TBody fetchedData={data} />}
+			</table>
+		</div>
+	);
 }

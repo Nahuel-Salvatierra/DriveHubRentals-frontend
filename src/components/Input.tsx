@@ -3,6 +3,7 @@ interface InputProps {
 		htmlFor: string;
 		text: string;
 		inputType: string
+		value?: string
 	};
 }
 
@@ -10,6 +11,7 @@ export default function Input({ props }: InputProps) {
 	return (
 		<>
 			<input
+				value={props.value}
 				type={props.inputType}
 				name={props.htmlFor}
 				id={props.htmlFor}
