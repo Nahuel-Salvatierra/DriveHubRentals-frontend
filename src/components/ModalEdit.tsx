@@ -23,7 +23,7 @@ export default function ModalEdit({ entity, setShowModal }) {
 		}
 	}
 
-	function onChange(event: React.ChangeEvent<HTMLInputElement>) {
+	function onChange(event: React.ChangeEvent) {
 		setData({
 			...data,
 			[event.target.name]: event.target.value,

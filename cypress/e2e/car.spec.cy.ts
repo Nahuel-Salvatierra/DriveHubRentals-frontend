@@ -39,7 +39,7 @@ describe("Car", () => {
 		cy.contains("Car created").should("exist");
 	});
 
-	it.only("Should updated a car", () => {
+	it("Should updated a car", () => {
 		cy.get("[data-cy=car").click();
 		cy.get("[data-cy=show-modal-1").click()
 		cy.get("[data-cy=modal-brand]").clear().type("Ford");
