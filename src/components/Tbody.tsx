@@ -15,7 +15,10 @@ export default function TBody({ fetchedData }: DataType) {
 							return <Td key={index} item={value} />;
 						})}
 						<td className="px-2 py-4">
-							<ButtonShowModal key={object.id} object={object}/>
+							<ButtonShowModal key={object.id} entity={object} />
+							<button className="text-rose-500 text-green font-medium text-sm w-full sm:w-auto px-5 py-2.5 text-center">
+								Delete
+							</button>
 						</td>
 					</tr>
 				);
