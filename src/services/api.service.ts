@@ -23,7 +23,6 @@ export const postResources = async (
 };
 
 export const putResources = async (path: string, update:DataType["fetchedData"]) => {
-	console.log(update)
 	const { data } = await axios.put(`${path}`, update);
 	return data;
 };

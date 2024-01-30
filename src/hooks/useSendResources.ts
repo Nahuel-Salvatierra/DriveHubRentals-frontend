@@ -2,11 +2,8 @@ import { useState } from "react";
 import { PostDataType } from "../services/api.service";
 
 export default function useSendResources() {
-	// fetchResource: CallableFunction,
-	// param: string,
-	// data: PostDataType["postData"]
 	const [loading, setLoading] = useState(false);
-	const [error, setError] = useState<unknown | null>(null);
+	const [error, setError] = useState<Error | null>(null);
 
 	const sendResources = async (
 		fetchResource: CallableFunction,
@@ -18,7 +15,7 @@ export default function useSendResources() {
 		try {
 			await fetchResource(param, data);
 		} catch (error) {
-			setError(error);
+			setError(error as Error);
 		}
 		setLoading(false);
 	};
