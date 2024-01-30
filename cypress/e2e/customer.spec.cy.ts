@@ -37,7 +37,7 @@ describe("Customer", () => {
 		cy.contains("Customer created").should("exist");
 	});
 
-	it.only("Should update customer", () => {
+	it("Should update customer", () => {
 		cy.get("[data-cy=customer]").click();
 		cy.get("[data-cy=show-modal-1").click();
 		cy.get("[data-cy=modal-name]").clear().type("John");
