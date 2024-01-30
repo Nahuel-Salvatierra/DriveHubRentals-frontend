@@ -34,7 +34,7 @@ export default function ModalEdit({ entity, setShowModal }) {
 		await sendResources(putResources, `${selectedOption}/${data.id}`, data);
 		error
 			? toast.error(`${error.message}`)
-			: toast.success(`${selectedOption.toLowerCase()} updated`);
+			: toast.success(`${selectedOption.toLocaleUpperCase()} updated`);
 		setShowModal(false);
 	};
 	return (
