@@ -1,4 +1,3 @@
-import { AxiosResponse } from "axios";
 import axios from "./axios.config";
 import { Customer } from "../models/customer.model";
 import { Car } from "../models/car.model";
