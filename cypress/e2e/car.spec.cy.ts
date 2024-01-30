@@ -38,4 +38,19 @@ describe("Car", () => {
 		cy.get("[data-cy=button-submit").click();
 		cy.contains("Car created").should("exist");
 	});
+
+	it.only("Should updated a car", () => {
+		cy.get("[data-cy=car").click();
+		cy.get("[data-cy=show-modal-1").click()
+		cy.get("[data-cy=input-modal-brand]").clear().type("Ford");
+		cy.get("[data-cy=input-modal-model]").clear().type("Mustang");
+		cy.get("[data-cy=input-modal-year]").clear().type("2022");
+		cy.get("[data-cy=input-modal-kms]").clear().type("123232");
+		cy.get("[data-cy=input-modal-color").clear().type("#ff1234");
+		cy.get("[data-cy=input-modal-AC]").clear().type("No AC");
+		cy.get("[data-cy=input-modal-passengers").clear().type("5");
+		cy.get("[data-cy=input-modal-transmission").clear().type("Automatic");
+		cy.get("[data-cy=submit-modal-1").click();
+		cy.get("[data-cy=loading").should("exist");
+	})
 });

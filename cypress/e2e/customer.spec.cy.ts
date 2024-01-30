@@ -34,6 +34,21 @@ describe("Customer", () => {
 		cy.get("[data-cy=phone]").type("123456789");
 		cy.get("[data-cy=birthDate]").type("2000-01-01");
 		cy.get("[data-cy=button-submit]").click();
-		cy.contains("Customer created").should("exist")
+		cy.contains("Customer created").should("exist");
+	});
+
+	it.only("Should update customer", () => {
+		cy.get("[data-cy=customer]").click();
+		cy.get("[data-cy=show-modal-1").click();
+		cy.get("[data-cy=modal-name]").clear().type("John");
+		cy.get("[data-cy=modal-lastName]").clear().type("Doe");
+		cy.get("[data-cy=modal-documentType]").select("Passport");
+		cy.get("[data-cy=modal-documentNumber]").clear().type("12345678");
+		cy.get("[data-cy=modal-address]").clear().type("123 Main St");
+		cy.get("[data-cy=modal-email]").clear().type("a@a.com");
+		cy.get("[data-cy=modal-phone]").clear().type("123456789");
+		cy.get("[data-cy=modal-birthDate]").type("2000-01-01");
+		cy.get("[data-cy=submit-modal-1]").click();
+		cy.contains("Customer updated").should("exist");
 	});
 });
