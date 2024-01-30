@@ -8,6 +8,7 @@ interface InputSelectProps {
 			value: string;
 		}[];
 		container?: string;
+		onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 	};
 }
 
@@ -15,6 +16,7 @@ export default function InputSelect({ props }: InputSelectProps) {
 	return (
 		<>
 			<select
+				onChange={props.onChange}
 				defaultValue={props.defaultValue}
 				data-cy={`${props?.container}-${props.htmlFor}`}
 				name={props.htmlFor}

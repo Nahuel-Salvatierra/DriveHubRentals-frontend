@@ -4,7 +4,7 @@ import Input from "../Input";
 import InputSelect from "../Select";
 import { dateMapper } from "../../utils/dateMapper";
 
-interface CustomerInputsProps {
+export interface InputsProps {
 	onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 	data?: Customer;
 }
@@ -12,7 +12,7 @@ interface CustomerInputsProps {
 export default function CustomerInputs({
 	onChange,
 	data,
-}: CustomerInputsProps) {
+}: InputsProps) {
 	return (
 		<>
 			<div className="grid md:grid-cols-2 md:gap-6">

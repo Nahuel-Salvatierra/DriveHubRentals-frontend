@@ -5,6 +5,7 @@ import useBackOffice from "../hooks/useBackOffice";
 import toast from "react-hot-toast";
 import Loading from "./Loading";
 import CustomerInputs from "./customer/CustomerInputs";
+import CarInputs from "./car/CarInputs";
 
 export default function ModalEdit({ entity, setShowModal }) {
 	const [data, setData] = useState({ ...entity });
@@ -15,6 +16,8 @@ export default function ModalEdit({ entity, setShowModal }) {
 		switch (selectedOption) {
 			case "customer":
 				return <CustomerInputs data={data} onChange={onChange} />;
+			case "car":
+				return <CarInputs data={data} onChange={onChange} />;
 			default:
 				return null;
 		}
